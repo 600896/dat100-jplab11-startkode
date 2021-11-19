@@ -4,68 +4,87 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
 	
-	// TODO - deklarering av objektvariable
+//deklarering av objekt variabler
+	int id; //Objektvariablen id skal brukes om en unik identifikasjon på et innlegg.
+	String bruker;
+	String dato;
+	int likes;
+	
 	
 	public Innlegg() {
 		
 	}
+//som gir verdi til objektvariablene. Konstruktøren som bare tar tre parametre skal sette likes lik 0.
 	
 	public Innlegg(int id, String bruker, String dato) {
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		likes = 0;
+		this.id = id;
+		this.dato = dato;
+		this.bruker = bruker;
+		
+		
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
-
-		// TODO - START
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		this.likes = likes;
 		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
 	
 	public String getBruker() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return bruker;
 
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker = bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
+		return dato;
 		
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato = dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return id;
 
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return likes;
 
 	}
-	
+	//øker antall likes med +1
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		likes += 1;
 	}
 	
+//Implementer metoden public boolean erLik(Innlegg innlegg) som returnerer 
+//true hvis og kun hvis innlegget har samme id som innlegget innlegg git med som parameter.
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		if(id == innlegg.getId()) {
+				return true;
+			}
+			else return false;
+			
+	
 	}
+	
+	//"1\nOle Olsen\n23-10\n7\n"
+	//der det først tallet er id for innlegget og 7 er antall likes for eksemplet.
 	
 	@Override
 	public String toString() {
+		String melding = id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
+		return melding;
 		
-		throw new UnsupportedOperationException(TODO.method());
-				
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
